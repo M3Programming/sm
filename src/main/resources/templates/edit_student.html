@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Enrolment System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+     <body>
+        <div class = "container">
+            <div class ="row">
+                <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                    <h1 class ="text-center">Update Student Record</h1>   
+                    <div class="card-body"> 
+                        <form th:action="@{/Students/{id} (id=${student.id})}" th:object="${student}" method ="post">
+                             <div class ="mb-3">
+                                <label class="form-label">First Name: </label>
+                                <input type="text" 
+                                       name="fname" 
+                                       class="form-control" 
+                                       th:field="*{fname}" 
+                                       placeholder= "Firstname"/>
+                            </div>
+                            <div class ="mb-3">
+                                <label class="form-label">Middle Name: </label>
+                                <input type="text" 
+                                       name="mname" 
+                                       class="form-control" 
+                                       th:field="*{mname}"
+                                       placeholder= "Middle Name"/>
+                            </div>  
+                            <div class ="mb-3">
+                                <label class="form-label">Last Name: </label>
+                                <input type="text" 
+                                       name="lname" 
+                                       class="form-control"
+                                       th:field="*{lname}"
+                                       placeholder= "Lastname"/>
+                            </div>
+                            <div class ="mb-3">
+                                <label class="form-label">Birth Date: </label>
+                                <input type="date" 
+                                       name="bdate" 
+                                       class="form-control" 
+                                       th:value="*{bdate}"
+                                       placeholder= "Birthdate"/>
+                            </div>
+                            <div class ="mb-3">
+                                <label class="form-label">Gender: </label>
+                                <input 
+                                    type="text" 
+                                    name="gender" 
+                                    class="form-control" 
+                                    th:field="*{gender}"
+                                    placeholder= "Gender"
+                                    />
+                            </div>
+                            <div class ="mb-3">
+                                <label class="form-label">Email Address: </label>
+                                <input 
+                                    type="text" 
+                                    name="email" 
+                                    class="form-control" 
+                                    th:field="*{email}"
+                                    placeholder= "Email Address"
+                                    />
+                            </div>
+                            <div class ="box-footer">
+                                <button type="submit" class="btn btn-primary">Update Record</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
